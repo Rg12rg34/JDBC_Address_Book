@@ -1,13 +1,14 @@
 package com.bridgelabz;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import java.util.List;
+
+import org.junit.Test;
+
+import java.sql.SQLException;
 
 public class AddressBookServiceTest {
+
     @Test
-    void givenContactsWhenAdded_ShouldReturnTheTotalCount() {
-        AddressBookService addressBookService = new AddressBookService();
-        List<AddressBookContacts> addressBookContacts = addressBookService.readAddressBookContacts(AddressBookService.IOService.DB_IO);
-        Assertions.assertEquals(4, addressBookContacts.size());
+    public void addressBook_GetConnection() throws SQLException {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        databaseConnection.getConnection();
     }
 }
